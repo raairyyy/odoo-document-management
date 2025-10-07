@@ -1,24 +1,26 @@
-# Gunakan Node 14 (GitBook masih bisa asal dikasih patch)
-FROM node:14-buster
+# Gunakan base image Node.js
+FROM node:18-alpine
 
+# Set working directory
 WORKDIR /app
+
+# Copy package.json (kalau ada)
+COPY package*.json ./
+
+# Install gitbook-cli global
+RUN npm install -g gitbook-cli
+
+# Install dependencies GitBook
+RUN gitbook fetch 3.2.3
+
+# Copy semua file ke container
 COPY . .
 
-# Install versi npm & gitbook-cli yang cocok
-RUN npm install -g npm@6 gitbook-cli@2.3.2 http-server@14.1.1
+# Build GitBook ke folder _book
+RUN gitbook build . ./_book
 
-# Patch fix supaya GitBook bisa jalan di Node 14
-RUN npm install graceful-fs@4.2.2 --save
-
-# Fetch dan install plugin GitBook
-RUN gitbook fetch 3.2.3 || true
-RUN gitbook install || true
-
-# Build ke folder _book
-RUN mkdir -p _book && gitbook build . ./_book || echo "<h1>GitBook build failed</h1>" > ./_book/index.html
-
-# Expose port 3021
+# Expose port default GitBook
 EXPOSE 3021
 
-# Serve hasil build pake http-server
-CMD ["http-server", "_book", "-p", "3021"]
+# Start GitBook serve
+CMD ["gitbook", "serve", "./_book", "--port", "3021", "--lrport", "35729", "--no-live"]
