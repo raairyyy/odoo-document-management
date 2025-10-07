@@ -8,7 +8,9 @@
     "sharing",
     "fontsettings",
     "theme-default",
-    "youtube"
+    "youtube",
+    "advanced-embed",
+    "embed"
   ],
   "pluginsConfig": {
     "sharing": {
@@ -17,6 +19,20 @@
     },
     "youtube": {
       "embed": true
+    },
+    "advanced-embed": {
+      "height": "480",
+      "width": "100%",
+      "align": "center"
+    },
+    "embed": {
+      "url": true,
+      "code": true
+    },
+    "fontsettings": {
+      "theme": "white",
+      "family": "sans",
+      "size": 2
     }
   }
 }
