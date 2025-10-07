@@ -1,26 +1,19 @@
-# Gunakan Node versi 12 agar kompatibel dengan GitBook
-FROM node:12
+# Gunakan versi Node yang lebih baru
+FROM node:16
 
-# Set working directory
 WORKDIR /app
 
-# Salin semua file ke container
 COPY . .
 
-# Install gitbook-cli dan serve
-RUN npm install -g gitbook-cli serve
+# Install gitbook-cli & serve
+RUN npm install -g gitbook-cli@2.3.2 serve@14.2.5
 
-# Install GitBook 3.2.3 (versi stabil)
-RUN gitbook fetch 3.2.3
+# Fetch versi gitbook yang stabil (gunakan versi 3.2.3 dari lokal cache gitbook-cli)
+RUN gitbook fetch 3.2.3 || true
 
-# Install plugin GitBook (kalau ada plugin di book.json)
-RUN gitbook install || true
+# Build buku GitBook
+RUN gitbook install && gitbook build
 
-# Build ke folder _book
-RUN gitbook build . ./_book
-
-# Expose port 3000 (bisa kamu ubah di Coolify)
+# Jalankan server statis di port 4000
 EXPOSE 3021
-
-# Jalankan hasil build dengan serve
-CMD ["serve", "-s", "_book", "-l", "3021"]
+CMD ["serve", "_book", "-l", "3021"]
