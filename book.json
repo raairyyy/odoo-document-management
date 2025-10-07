@@ -1,11 +1,35 @@
 {
+  "title": "Dokumentasi Proyek",
+  "description": "Panduan penggunaan dan konfigurasi sistem",
+  "author": "Tim Dev",
+  "language": "id",
   "plugins": [
-    "embed",
     "highlight",
     "search",
     "lunr",
     "sharing",
     "fontsettings",
-    "theme-default"
-  ]
+    "theme-default",
+    "youtube",
+    "iframe"
+  ],
+  "pluginsConfig": {
+    "sharing": {
+      "facebook": true,
+      "twitter": true,
+      "google": false,
+      "linkedin": true,
+      "weibo": false,
+      "instapaper": false,
+      "vk": false,
+      "all": [
+        "facebook",
+        "twitter",
+        "linkedin"
+      ]
+    },
+    "theme-default": {
+      "showLevel": true
+    }
+  }
 }
