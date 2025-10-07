@@ -1,4 +1,12 @@
-"scripts": {
-  "build": "gitbook build ./ ./_book",
-  "start": "gitbook serve"
+{
+  "name": "my-gitbook",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npx gitbook build ./ ./_book",
+    "start": "npx serve _book -p $PORT --single"
+  },
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2",
+    "serve": "^14.2.0"
+  }
 }
