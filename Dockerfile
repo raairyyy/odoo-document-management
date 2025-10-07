@@ -1,22 +1,22 @@
-# Gunakan Node 14 karena GitBook 3.2.3 tidak kompatibel dengan Node 18+
-FROM node:14-alpine
+# Gunakan Node.js versi lama agar kompatibel dengan GitBook
+FROM node:10-alpine
 
 WORKDIR /app
 
-# Copy package.json kalau ada (optional, kalau tidak ada di repo kamu bisa hapus baris ini)
-COPY package*.json ./
-
-# Install GitBook CLI dan server statis
-RUN npm install -g gitbook-cli http-server
-
-# Copy semua file GitBook
+# Copy file proyek ke dalam container
 COPY . .
 
-# Build GitBook ke folder _book
-RUN gitbook install && gitbook build ./ ./_book
+# Install GitBook dan server statis
+RUN npm install -g gitbook-cli@2.3.2 http-server@0.12.3
 
-# Expose port 4000 (Coolify akan map otomatis)
+# Instal plugin GitBook (hindari bug callback)
+RUN gitbook fetch 3.2.3 && gitbook install || true
+
+# Build GitBook ke folder _book
+RUN gitbook build ./ ./_book || true
+
+# Expose port untuk Coolify
 EXPOSE 4000
 
-# Jalankan hasil build dengan http-server
-CMD ["http-server", "_book", "-p", "4000"]
+# Jalankan GitBook dengan http-server
+CMD ["npx", "http-server", "_book", "-p", "4000", "-a", "0.0.0.0"]
