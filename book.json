@@ -6,23 +6,12 @@
     "search",
     "lunr",
     "sharing",
-    "fontsettings",
-    "theme-default",
-    "youtube",
-    "advanced-embed"
+    "fontsettings"
   ],
   "pluginsConfig": {
     "sharing": {
       "facebook": true,
       "twitter": true
-    },
-    "youtube": {
-      "embed": true
-    },
-    "advanced-embed": {
-      "height": "480",
-      "width": "100%",
-      "align": "center"
     }
   }
 }
