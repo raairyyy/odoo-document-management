@@ -3,23 +3,21 @@ FROM node:14-alpine
 WORKDIR /app
 COPY . .
 
-# Install GitBook CLI & serve
+# Install GitBook CLI & Serve (versi yang stabil)
 RUN npm install -g gitbook-cli@2.3.2 serve@14.2.5
 
-# Patch bug "cb.apply is not a function"
-RUN sed -i 's/if (cb) cb.apply(this, arguments)/if (cb && typeof cb === "function") cb.apply(this, arguments)/' \
-    $(npm root -g)/gitbook-cli/node_modules/npm/node_modules/graceful-fs/polyfills.js || true
+# Gunakan gitbook versi stabil 3.2.3
+RUN gitbook fetch 3.2.3
 
-# Fetch GitBook version dan install dependensi
-RUN gitbook fetch 3.2.3 || true
+# Install plugin & dependencies
 RUN gitbook install || true
 
-# Pastikan folder _book ada dulu sebelum fallback HTML
-RUN mkdir -p ./_book
+# Build GitBook
+RUN mkdir -p _book && \
+    gitbook build . ./_book || echo "<h1>GitBook build failed</h1>" > ./_book/index.html
 
-# Build GitBook (kalau gagal, bikin halaman fallback)
-RUN gitbook build . ./_book || (echo "<h1>GitBook build failed</h1>" > ./_book/index.html)
-
-# Serve hasil build
+# Expose ke port 3021
 EXPOSE 3021
+
+# Jalankan server statis hasil build
 CMD ["serve", "-s", "_book", "-l", "3021"]
