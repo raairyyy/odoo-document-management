@@ -1,5 +1,5 @@
-# Base image Node.js
-FROM node:18-alpine
+# Gunakan Node.js versi 14 (lebih kompatibel dengan GitBook)
+FROM node:14-alpine
 
 # Install gitbook-cli
 RUN npm install -g gitbook-cli@2.3.2
@@ -19,4 +19,4 @@ RUN gitbook build . ./_book
 # Jalankan static server
 RUN npm install -g serve
 EXPOSE 3021
-CMD ["serve", "-s", "_book", "-l", "3000"]
+CMD ["serve", "-s", "_book", "-l", "3021"]
