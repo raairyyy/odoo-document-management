@@ -9,7 +9,7 @@
     "fontsettings",
     "theme-default",
     "youtube",
-    "advanced-embed"   // <--- ini penting
+    "advanced-embed"
   ],
   "pluginsConfig": {
     "sharing": {
