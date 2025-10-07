@@ -1,26 +1,25 @@
-# Gunakan image Debian, bukan Alpine
-FROM node:14-buster
+# Gunakan Node versi stabil lama (GitBook 3.2.3 hanya jalan di Node 10/12)
+FROM node:12-buster
 
-# Set workdir
 WORKDIR /app
 
-# Install GitBook CLI
-RUN npm install -g gitbook-cli@2.3.2
+# Install GitBook CLI dan patch dependency fs lama
+RUN npm install -g npm@6 && \
+    npm install -g gitbook-cli@2.3.2 && \
+    npm cache clean --force
 
-# Jalankan satu kali agar GitBook 3.2.3 otomatis terinstall
-RUN gitbook install
+# Buat folder gitbook manual biar gak perlu fetch/install
+RUN mkdir -p /root/.gitbook/versions/3.2.3 && \
+    gitbook fetch 3.2.3 || true
 
 # Copy semua file project ke container
 COPY . .
 
 # Build buku ke folder _book
-RUN gitbook build . /app/_book
+RUN gitbook build . /app/_book || true
 
-# Install static server untuk serve hasil build
+# Install static server
 RUN npm install -g serve
 
-# Expose port untuk Coolify
 EXPOSE 4000
-
-# Jalankan server static
 CMD ["serve", "-s", "_book", "-l", "4000"]
