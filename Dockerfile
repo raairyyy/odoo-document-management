@@ -1,22 +1,17 @@
-# Gunakan Node.js versi 10 agar kompatibel dengan GitBook
 FROM node:10-alpine
 
 # Install gitbook-cli
 RUN npm install -g gitbook-cli@2.3.2
 
-# Set working directory
 WORKDIR /app
-
-# Copy semua file ke container
 COPY . .
 
-# Install plugin GitBook (jika ada)
+# Install plugin GitBook (ignore error)
 RUN gitbook install || true
 
 # Build ke folder _book
 RUN gitbook build . ./_book
 
-# Jalankan static server
-RUN npm install -g serve
+# Jalankan server statis di port 3021
 EXPOSE 3021
-CMD ["serve", "-s", "_book", "-l", "3021"]
+CMD npx serve -s _book -l 3021
