@@ -1,8 +1,6 @@
-# Sebelumnya:
-# FROM node:18-alpine
 FROM node:12-alpine
 
-RUN npm install -g gitbook-cli@2.3.2 serve
+RUN npm install -g gitbook-cli@2.3.2 serve@11.3.2
 WORKDIR /app
 COPY . .
 RUN gitbook install || true
