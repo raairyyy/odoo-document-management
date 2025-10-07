@@ -1,25 +1,23 @@
-# Gunakan Node versi stabil lama (GitBook 3.2.3 hanya jalan di Node 10/12)
-FROM node:12-buster
+# Gunakan Node.js 18 (modern & stabil)
+FROM node:18-alpine
 
+# Set working directory
 WORKDIR /app
 
-# Install GitBook CLI dan patch dependency fs lama
-RUN npm install -g npm@6 && \
-    npm install -g gitbook-cli@2.3.2 && \
-    npm cache clean --force
+# Salin file dependency
+COPY package*.json ./
 
-# Buat folder gitbook manual biar gak perlu fetch/install
-RUN mkdir -p /root/.gitbook/versions/3.2.3 && \
-    gitbook fetch 3.2.3 || true
+# Install GitBook dan HTTP Server
+RUN npm install -g gitbook-cli http-server && npm install
 
-# Copy semua file project ke container
+# Salin semua file project
 COPY . .
 
-# Build buku ke folder _book
-RUN gitbook build . /app/_book || true
+# Build GitBook ke folder _book
+RUN npx gitbook build ./ ./_book
 
-# Install static server
-RUN npm install -g serve
-
+# Expose port 4000 (Coolify akan map ke domain otomatis)
 EXPOSE 4000
-CMD ["serve", "-s", "_book", "-l", "4000"]
+
+# Jalankan server untuk hasil _book
+CMD ["npx", "http-server", "_book", "-p", "4000"]
