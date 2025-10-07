@@ -18,5 +18,5 @@ RUN gitbook build . ./_book
 
 # Jalankan static server
 RUN npm install -g serve
-EXPOSE 3000
+EXPOSE 3021
 CMD ["serve", "-s", "_book", "-l", "3000"]
