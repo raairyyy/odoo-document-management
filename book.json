@@ -1,8 +1,8 @@
 {
-  "title": "Dokumentasi Proyek",
-  "description": "Panduan penggunaan dan konfigurasi sistem",
-  "author": "Tim Dev",
-  "language": "id",
+  "title": "My GitBook Docs",
+  "description": "Dokumentasi proyek kamu",
+  "author": "Alisha Zahra Shakira",
+  "language": "en",
   "plugins": [
     "highlight",
     "search",
@@ -10,26 +10,21 @@
     "sharing",
     "fontsettings",
     "theme-default",
-    "youtube",
-    "iframe"
+    "youtube"
   ],
   "pluginsConfig": {
     "sharing": {
       "facebook": true,
       "twitter": true,
-      "google": false,
-      "linkedin": true,
+      "linkedin": false,
       "weibo": false,
       "instapaper": false,
-      "vk": false,
-      "all": [
-        "facebook",
-        "twitter",
-        "linkedin"
-      ]
+      "vk": false
     },
-    "theme-default": {
-      "showLevel": true
+    "fontsettings": {
+      "theme": "white",
+      "family": "sans",
+      "size": 2
     }
   }
 }
