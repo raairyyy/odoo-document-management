@@ -1,22 +1,27 @@
-# Gunakan base image Node.js versi stabil (LTS)
-FROM node:10-alpine
+# Gunakan Node LTS terbaru yang masih kompatibel
+FROM node:16-alpine
 
+# Set working directory
 WORKDIR /app
 
-# Copy semua file ke container
+# Copy seluruh file ke container
 COPY . .
 
-# Install gitbook CLI dan HTTP server
+# Install dependensi utama
 RUN npm install -g gitbook-cli@2.3.2 http-server@0.12.3
 
-# Install versi GitBook yang cocok + plugin embed
-RUN gitbook fetch 3.2.3 \
- && gitbook install \
- && npm install gitbook-plugin-embed@1.0.0 \
- && gitbook build ./ ./_book
+# Fix: pakai GitBook versi stabil (3.2.3)
+RUN gitbook fetch 3.2.3
 
-# Expose port untuk Coolify
+# Install plugin bawaan + plugin embed manual
+RUN gitbook install || true
+RUN npm install gitbook-plugin-embed@1.0.0 || true
+
+# Build GitBook
+RUN gitbook build ./ ./_book
+
+# Expose port untuk http-server
 EXPOSE 4000
 
-# Jalankan http-server untuk serve hasil build
+# Jalankan server untuk menampilkan hasil build
 CMD ["http-server", "_book", "-p", "4000", "-a", "0.0.0.0"]
