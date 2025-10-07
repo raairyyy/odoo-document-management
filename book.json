@@ -14,4 +14,20 @@
       "twitter": true
     }
   }
+  {
+  "plugins": [
+    "embed",
+    "highlight",
+    "search",
+    "lunr",
+    "sharing",
+    "fontsettings"
+  ],
+  "pluginsConfig": {
+    "embed": {
+      "style": "modern",
+      "icon": true
+    }
+  }
+}
 }
