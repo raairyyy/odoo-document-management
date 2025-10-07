@@ -1,5 +1,5 @@
-# Gunakan Node LTS terbaru yang masih kompatibel
-FROM node:16-alpine
+# Gunakan Node.js 14 (kompatibel penuh dengan GitBook)
+FROM node:14-alpine
 
 # Set working directory
 WORKDIR /app
@@ -7,20 +7,19 @@ WORKDIR /app
 # Copy seluruh file ke container
 COPY . .
 
-# Install dependensi utama
+# Install gitbook-cli dan http-server
 RUN npm install -g gitbook-cli@2.3.2 http-server@0.12.3
 
-# Fix: pakai GitBook versi stabil (3.2.3)
-RUN gitbook fetch 3.2.3
+# Install GitBook versi stabil (3.2.3)
+RUN gitbook fetch 3.2.3 || true
 
-# Install plugin bawaan + plugin embed manual
+# Install plugin-plugin yang ada di book.json
 RUN gitbook install || true
-RUN npm install gitbook-plugin-embed@1.0.0 || true
 
-# Build GitBook
+# Build GitBook ke folder _book
 RUN gitbook build ./ ./_book
 
-# Expose port untuk http-server
+# Expose port 4000 untuk Coolify
 EXPOSE 4000
 
 # Jalankan server untuk menampilkan hasil build
