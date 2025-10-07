@@ -1,9 +1,27 @@
-FROM node:12-alpine
+# Gunakan Node.js versi modern
+FROM node:16-alpine
 
-RUN npm install -g gitbook-cli@2.3.2 serve@11.3.2
+# Install GitBook CLI dari fork yang sudah fix, dan serve
+RUN npm install -g gitbook-cli serve
+
+# Set working directory
 WORKDIR /app
+
+# Copy semua file project
 COPY . .
+
+# Bersihkan cache & install dependencies GitBook
+RUN gitbook fetch 3.2.3 || true
 RUN gitbook install || true
-RUN gitbook build . ./_book || true
-RUN mkdir -p ./_book && [ -f "./_book/index.html" ] || echo "<h1>GitBook build failed</h1>" > ./_book/index.html
+
+# Build GitBook
+RUN gitbook build . ./_book || (echo "<h1>GitBook build failed</h1>" > ./_book/index.html)
+
+# Pastikan direktori build ada
+RUN mkdir -p ./_book
+
+# Expose port (buat Coolify)
+EXPOSE 3021
+
+# Jalankan hasil build di port 3021
 CMD ["serve", "-s", "_book", "-l", "3021"]
