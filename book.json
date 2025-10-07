@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    "embed",
+    "highlight",
+    "search",
+    "lunr",
+    "sharing",
+    "fontsettings",
+    "theme-default"
+  ]
+}
