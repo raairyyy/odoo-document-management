@@ -1,12 +1,16 @@
 {
   "name": "my-gitbook",
   "version": "1.0.0",
+  "description": "GitBook deployment for Coolify",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "npx gitbook build ./ ./_book",
-    "start": "npx serve _book -p $PORT --single"
+    "start": "npx http-server _book -p $PORT"
   },
-  "devDependencies": {
+  "dependencies": {
     "gitbook-cli": "^2.3.2",
-    "serve": "^14.2.0"
+    "http-server": "^14.1.1"
   }
 }
