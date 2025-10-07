@@ -1,8 +1,6 @@
 {
-  "title": "My GitBook Docs",
-  "description": "Dokumentasi proyek kamu",
-  "author": "Alisha Zahra Shakira",
-  "language": "en",
+  "title": "Panduan Implementasi",
+  "description": "Dokumentasi GitBook",
   "plugins": [
     "highlight",
     "search",
@@ -10,21 +8,21 @@
     "sharing",
     "fontsettings",
     "theme-default",
-    "youtube"
+    "youtube",
+    "advanced-embed"   // <--- ini penting
   ],
   "pluginsConfig": {
     "sharing": {
       "facebook": true,
-      "twitter": true,
-      "linkedin": false,
-      "weibo": false,
-      "instapaper": false,
-      "vk": false
+      "twitter": true
     },
-    "fontsettings": {
-      "theme": "white",
-      "family": "sans",
-      "size": 2
+    "youtube": {
+      "embed": true
+    },
+    "advanced-embed": {
+      "height": "480",
+      "width": "100%",
+      "align": "center"
     }
   }
 }
