@@ -9,14 +9,11 @@ COPY . .
 # Install GitBook dan server statis
 RUN npm install -g gitbook-cli@2.3.2 http-server@0.12.3
 
-# Instal plugin GitBook (hindari bug callback)
-RUN gitbook fetch 3.2.3 && gitbook install || true
-
-# Build GitBook ke folder _book
-RUN gitbook build ./ ./_book || true
+# Instal plugin GitBook dan build
+RUN gitbook fetch 3.2.3 && gitbook install && gitbook build ./ ./_book
 
 # Expose port untuk Coolify
 EXPOSE 4000
 
-# Jalankan GitBook dengan http-server
+# Jalankan GitBook hasil build
 CMD ["npx", "http-server", "_book", "-p", "4000", "-a", "0.0.0.0"]
