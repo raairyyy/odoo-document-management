@@ -1,35 +1,22 @@
 {
-  "title": "My Book",
+  "title": "Panduan Implementasi",
+  "description": "Dokumentasi GitBook",
   "plugins": [
-    "youtube",
+    "highlight",
     "search",
     "lunr",
-    "highlight",
     "sharing",
     "fontsettings",
-    "theme-default"
-  ]
-}
-
+    "theme-default",
+    "youtube"
+  ],
   "pluginsConfig": {
-    "embed": {
-      "target": "_blank",
-      "code": true
-    },
-    "richmedia": {
-      "siteDomains": ["youtube.com", "youtu.be", "vimeo.com"]
-    },
-    "theme-default": {
-      "showLevel": true
-    },
     "sharing": {
       "facebook": true,
-      "twitter": true,
-      "google": false,
-      "weibo": false,
-      "instapaper": false,
-      "vk": false,
-      "all": ["facebook", "twitter"]
+      "twitter": true
+    },
+    "youtube": {
+      "embed": true
     }
   }
 }
