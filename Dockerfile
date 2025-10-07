@@ -1,19 +1,19 @@
-# Gunakan versi Node yang lebih baru
-FROM node:16
+# Gunakan versi Node yang kompatibel
+FROM node:12
 
 WORKDIR /app
 
 COPY . .
 
-# Install gitbook-cli & serve
+# Instal GitBook CLI dan serve
 RUN npm install -g gitbook-cli@2.3.2 serve@14.2.5
 
-# Fetch versi gitbook yang stabil (gunakan versi 3.2.3 dari lokal cache gitbook-cli)
+# Paksa GitBook versi stabil
 RUN gitbook fetch 3.2.3 || true
 
-# Build buku GitBook
+# Build GitBook
 RUN gitbook install && gitbook build
 
-# Jalankan server statis di port 4000
+# Jalankan server statis
 EXPOSE 3021
 CMD ["serve", "_book", "-l", "3021"]
