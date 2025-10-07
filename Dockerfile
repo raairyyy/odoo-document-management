@@ -20,7 +20,7 @@ RUN gitbook install || true
 RUN gitbook build . ./_book
 
 # Expose port 3000 (bisa kamu ubah di Coolify)
-EXPOSE 3000
+EXPOSE 3021
 
 # Jalankan hasil build dengan serve
-CMD ["serve", "-s", "_book", "-l", "3000"]
+CMD ["serve", "-s", "_book", "-l", "3021"]
