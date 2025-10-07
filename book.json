@@ -1,17 +1,16 @@
 {
-  "title": "Panduan Implementasi",
-  "description": "Dokumentasi GitBook untuk panduan implementasi sistem.",
+  "title": "My Book",
   "plugins": [
-    "highlight",
+    "youtube",
     "search",
     "lunr",
+    "highlight",
     "sharing",
     "fontsettings",
-    "theme-default",
-    "youtube",
-    "embed",
-    "richmedia"
-  ],
+    "theme-default"
+  ]
+}
+
   "pluginsConfig": {
     "embed": {
       "target": "_blank",
