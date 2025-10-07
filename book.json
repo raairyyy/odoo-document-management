@@ -1,6 +1,6 @@
 {
   "title": "Panduan Implementasi",
-  "description": "Dokumentasi GitBook",
+  "description": "Dokumentasi GitBook untuk panduan implementasi sistem.",
   "plugins": [
     "highlight",
     "search",
@@ -8,15 +8,29 @@
     "sharing",
     "fontsettings",
     "theme-default",
-    "youtube"
+    "youtube",
+    "embed",
+    "richmedia"
   ],
   "pluginsConfig": {
+    "embed": {
+      "target": "_blank",
+      "code": true
+    },
+    "richmedia": {
+      "siteDomains": ["youtube.com", "youtu.be", "vimeo.com"]
+    },
+    "theme-default": {
+      "showLevel": true
+    },
     "sharing": {
       "facebook": true,
-      "twitter": true
-    },
-    "youtube": {
-      "embed": true
+      "twitter": true,
+      "google": false,
+      "weibo": false,
+      "instapaper": false,
+      "vk": false,
+      "all": ["facebook", "twitter"]
     }
   }
 }
