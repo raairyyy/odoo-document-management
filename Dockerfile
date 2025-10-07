@@ -1,5 +1,5 @@
-# Gunakan Node.js versi 14 (lebih kompatibel dengan GitBook)
-FROM node:14-alpine
+# Gunakan Node.js versi 10 agar kompatibel dengan GitBook
+FROM node:10-alpine
 
 # Install gitbook-cli
 RUN npm install -g gitbook-cli@2.3.2
@@ -10,7 +10,7 @@ WORKDIR /app
 # Copy semua file ke container
 COPY . .
 
-# Install plugin GitBook (kalau ada)
+# Install plugin GitBook (jika ada)
 RUN gitbook install || true
 
 # Build ke folder _book
