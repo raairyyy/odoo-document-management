@@ -4,6 +4,8 @@ icon: circle-exclamation
 
 # Login Warehouse Manager
 
+{% embed url="https://youtu.be/U9ZHGnir0jk" %}
+
 ### Langkah Login
 
 1. Buka browser seperti Google Chrome, Edge, atau Firefox.
