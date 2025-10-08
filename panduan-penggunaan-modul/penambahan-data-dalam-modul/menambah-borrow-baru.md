@@ -1,3 +1,7 @@
+---
+icon: hand-holding-box
+---
+
 # Menambah Borrow Baru
 
 {% embed url="https://youtu.be/XKlBtuwnfXM" %}

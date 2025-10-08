@@ -1,3 +1,7 @@
+---
+icon: magnifying-glass-play
+---
+
 # Priview
 
 {% embed url="https://youtu.be/KbMpIjtpLfc" %}

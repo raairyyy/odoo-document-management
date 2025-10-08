@@ -1,3 +1,7 @@
+---
+icon: key
+---
+
 # Mengubah Password User
 
 {% embed url="https://youtu.be/pybNmLRTtHc" %}

@@ -1,3 +1,7 @@
+---
+icon: firstdraft
+---
+
 # Reset to Draft
 
 {% embed url="https://youtu.be/3hfKQtHPKyQ" %}

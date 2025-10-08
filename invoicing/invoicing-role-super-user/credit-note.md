@@ -1,3 +1,7 @@
+---
+icon: message-minus
+---
+
 # Credit Note
 
 {% embed url="https://youtu.be/4U6JwzJ-9Kg" %}

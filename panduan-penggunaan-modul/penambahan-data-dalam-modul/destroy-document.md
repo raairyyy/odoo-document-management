@@ -1,3 +1,7 @@
+---
+icon: circle-xmark
+---
+
 # Destroy Document
 
 Fitur **Destroy Document** digunakan untuk melakukan pemusnahan dokumen yang sudah tidak diperlukan. Semua aktivitas destroy akan tercatat sebagai histori dan dapat dilihat kembali kapan saja.

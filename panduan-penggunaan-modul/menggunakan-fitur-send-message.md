@@ -1,3 +1,7 @@
+---
+icon: message-plus
+---
+
 # Menggunakan Fitur Send Message
 
 {% embed url="https://youtu.be/t_3EpBRFZUU" %}

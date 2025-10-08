@@ -1,3 +1,7 @@
+---
+icon: user-plus
+---
+
 # Menambahkan User Baru
 
 {% embed url="https://youtu.be/BzsbJ5L80Fw" %}

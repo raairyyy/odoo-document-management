@@ -1,3 +1,7 @@
+---
+icon: person-dolly
+---
+
 # Menambah Transfer Baru
 
 {% embed url="https://youtu.be/UE8zOoIIDy4" %}

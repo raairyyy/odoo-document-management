@@ -1,3 +1,7 @@
+---
+icon: file-arrow-down
+---
+
 # Menambah Dokumen Baru
 
 {% embed url="https://youtu.be/2xC2yfonrhs" %}

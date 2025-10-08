@@ -1,3 +1,7 @@
+---
+icon: warehouse
+---
+
 # Warehouse
 
 {% embed url="https://youtu.be/qrw4B7Ggs5E" %}

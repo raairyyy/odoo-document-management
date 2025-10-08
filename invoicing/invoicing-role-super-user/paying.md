@@ -1,3 +1,7 @@
+---
+icon: envelope-open-dollar
+---
+
 # Paying
 
 {% embed url="https://youtu.be/YRzKQwDvvLw" %}

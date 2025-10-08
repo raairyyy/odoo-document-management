@@ -1,3 +1,7 @@
+---
+icon: box-open
+---
+
 # Boxes
 
 {% embed url="https://youtu.be/fQFsbl83D7o" %}

@@ -1,3 +1,7 @@
+---
+icon: circle-exclamation
+---
+
 # Login Warehouse Manager
 
 ### Langkah Login

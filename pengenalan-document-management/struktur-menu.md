@@ -1,3 +1,7 @@
+---
+icon: bars-sort
+---
+
 # Struktur Menu
 
 Struktur menu yang terdapat pada Document Management adalah sebagai berikut:

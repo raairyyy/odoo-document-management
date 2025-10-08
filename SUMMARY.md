@@ -6,7 +6,7 @@
 * [Fitur dan Keunggulan](pengenalan-document-management/fitur-dan-keunggulan.md)
 * [Struktur Menu](pengenalan-document-management/struktur-menu.md)
 
-## persiapan implementasi&#x20;
+## persiapan implementasi
 
 * [Panduan Login](persiapan-implementasi/panduan-login/README.md)
   * [Login Super User](persiapan-implementasi/panduan-login/login-super-user.md)
@@ -15,7 +15,7 @@
 * [Konfigurasi Modul](persiapan-implementasi/konfigurasi-modul/README.md)
   * [Organize Document](persiapan-implementasi/konfigurasi-modul/organize-document.md)
   * [Warehouse](persiapan-implementasi/konfigurasi-modul/warehouse/README.md)
-    * [PagMelihat Rak, Box, dan Dokumen di Warehousee 1](persiapan-implementasi/konfigurasi-modul/warehouse/pagmelihat-rak-box-dan-dokumen-di-warehousee-1.md)
+    * [Melihat Rak, Box, dan Dokumen di Warehousee 1](persiapan-implementasi/konfigurasi-modul/warehouse/pagmelihat-rak-box-dan-dokumen-di-warehousee-1.md)
   * [Shelves](persiapan-implementasi/konfigurasi-modul/shelves/README.md)
     * [Melihat Box, dan Dokumen di Shelf](persiapan-implementasi/konfigurasi-modul/shelves/melihat-box-dan-dokumen-di-shelf.md)
   * [Boxes](persiapan-implementasi/konfigurasi-modul/boxes/README.md)
@@ -36,7 +36,7 @@
   * [Menambah Transfer Baru](panduan-penggunaan-modul/penambahan-data-dalam-modul/menambah-transfer-baru.md)
   * [Destroy Document](panduan-penggunaan-modul/penambahan-data-dalam-modul/destroy-document.md)
 * [Melakukan Pencarian di Semua Menu](panduan-penggunaan-modul/melakukan-pencarian-di-semua-menu.md)
-* [Memfilter Data Berdasarkan Kriteria](panduan-penggunaan-modul/memfilter-data-berdasarkan-kriteria.md)
+* [Pencaian Data Menggunakan Filter](panduan-penggunaan-modul/memfilter-data-berdasarkan-kriteria.md)
 * [Export & Import Data Modul](panduan-penggunaan-modul/export-and-import-data-modul/README.md)
   * [Export Data](panduan-penggunaan-modul/export-and-import-data-modul/export-data.md)
   * [Import Dokumen](panduan-penggunaan-modul/export-and-import-data-modul/import-dokumen.md)

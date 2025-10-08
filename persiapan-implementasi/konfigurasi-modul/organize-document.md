@@ -1,3 +1,7 @@
+---
+icon: inbox-full
+---
+
 # Organize Document
 
 Halaman Organize Documents memungkinkan Super User atau Pengelola Gudang mengatur struktur penyimpanan dokumen secara efisien.

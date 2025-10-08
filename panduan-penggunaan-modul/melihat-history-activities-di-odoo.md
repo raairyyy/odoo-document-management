@@ -1,3 +1,7 @@
+---
+icon: rectangle-history
+---
+
 # Melihat History Activities di Odoo
 
 {% embed url="https://youtu.be/S9DswUo_uac" %}

@@ -1,4 +1,8 @@
-# Memfilter Data Berdasarkan Kriteria
+---
+icon: filter
+---
+
+# Pencaian Data Menggunakan Filter
 
 {% embed url="https://youtu.be/yXni0U2Mqas" %}
 

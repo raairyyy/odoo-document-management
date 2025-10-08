@@ -1,3 +1,7 @@
+---
+icon: thumbs-up
+---
+
 # Fitur dan Keunggulan
 
 #### Fitur Document Management Fitur-fitur yang terdapat pada Document Management adalah **Dashboard, Documents, Transfer, dan Borrow**. <a href="#fitur-document-management" id="fitur-document-management"></a>

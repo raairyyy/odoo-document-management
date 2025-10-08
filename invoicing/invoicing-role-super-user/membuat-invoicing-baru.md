@@ -1,3 +1,7 @@
+---
+icon: file-circle-plus
+---
+
 # Membuat invoicing baru
 
 {% embed url="https://youtu.be/rRIcpStukEU" %}

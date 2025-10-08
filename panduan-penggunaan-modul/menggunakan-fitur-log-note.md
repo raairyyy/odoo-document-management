@@ -1,3 +1,7 @@
+---
+icon: memo-circle-check
+---
+
 # Menggunakan Fitur Log Note
 
 {% embed url="https://youtu.be/JIxEfh8VGMc" %}

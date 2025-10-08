@@ -1,3 +1,7 @@
+---
+icon: shelves
+---
+
 # Shelves
 
 {% embed url="https://youtu.be/RHciggY1Pro" %}

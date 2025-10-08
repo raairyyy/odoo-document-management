@@ -1,3 +1,7 @@
+---
+icon: magnifying-glass
+---
+
 # Melakukan Pencarian di Semua Menu
 
 {% embed url="https://youtu.be/yXni0U2Mqas" %}

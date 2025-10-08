@@ -1,3 +1,7 @@
+---
+icon: circle-plus
+---
+
 # Menambah Company
 
 {% embed url="https://youtu.be/TAGWdebYWdY" %}

@@ -1,3 +1,7 @@
+---
+icon: print
+---
+
 # Send & Print
 
 {% embed url="https://youtu.be/2NjYfum7egw" %}
